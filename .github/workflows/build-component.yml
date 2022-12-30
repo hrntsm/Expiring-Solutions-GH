@@ -42,6 +42,7 @@ jobs:
         if: ${{ matrix.configuration == 'Release' }} # Only upload gha from a release build
         shell: powershell
         run: |
+          mkdir ./Release
           cp ./README.md ./Release/README.md
           cp ./LICENSE ./Release/LICENSE.txt
           cp ./ModifierComponent/bin/Release/net48 ./Release/ModifierComponent -recurse
